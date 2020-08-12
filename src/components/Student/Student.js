@@ -6,7 +6,7 @@ class Student extends React.Component {
     const { student } = this.props;
 
     return (
-      <div className="card bg-dark text-light border-0">
+      <div className={`card ${student.isAlive ? "bg-success" : "bg-dark"} text-light border-0`}>
         <div className="card-body">
           <h5 className="card-title text-uppercase">{student.firstName} {student.lastName}</h5>
           {
