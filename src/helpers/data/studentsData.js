@@ -140,7 +140,7 @@ const followTheLight = (studentId) => {
   // Take an id
   // find student
   // change student.isAlive === false
-  students.find((student) => student.id === studentId)['isAlive'] = false;
+  students.find((student) => student.id === studentId).isAlive = false;
 };
 
 export default {
