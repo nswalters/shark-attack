@@ -6,7 +6,6 @@ import SharkTank from '../components/SharkTank/SharkTank';
 import studentsData from '../helpers/data/studentsData';
 
 // TODO: add Graveyard component
-// TODO: add SharkTank component
 
 class App extends React.Component {
   state = {
