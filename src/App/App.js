@@ -30,6 +30,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Shark Attack</h1>
         <SharkTank livingStudents={livingStudents} />
+        <button className="btn btn-danger my-3">SHARK ATTACK!!</button>
         <Graveyard dearlyBeloved={dearlyBeloved} />
       </div>
     );
