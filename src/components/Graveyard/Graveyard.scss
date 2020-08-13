@@ -1,0 +1,17 @@
+.has-passed {
+  // border-radius: 50px 50px 0 0;
+  text-shadow: 1px 1px black;
+}
+
+.card-columns {
+  column-count: 4;
+}
+
+#graveyard {
+  background-color: slategray;
+  min-height: 25vh;
+}
+
+#graveyard-header {
+  background-color: beige;
+}

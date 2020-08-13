@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 
+import Graveyard from '../components/Graveyard/Graveyard';
 import SharkTank from '../components/SharkTank/SharkTank';
 
 import studentsData from '../helpers/data/studentsData';
@@ -23,11 +24,13 @@ class App extends React.Component {
 
   render() {
     const { livingStudents } = this.state;
+    const { dearlyBeloved } = this.state;
 
     return (
       <div className="App">
         <h1>Shark Attack</h1>
         <SharkTank livingStudents={livingStudents} />
+        <Graveyard dearlyBeloved={dearlyBeloved} />
       </div>
     );
   }

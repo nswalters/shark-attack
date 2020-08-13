@@ -3,6 +3,8 @@ import React from 'react';
 
 import Student from '../Student/Student';
 
+import './SharkTank.scss';
+
 class SharkTank extends React.Component {
 
   render() {
@@ -13,8 +15,8 @@ class SharkTank extends React.Component {
     ));
 
     return (
-      <div>
-        <h2>Shark Tank</h2>
+      <div id="shark-tank">
+        <h2 id="shark-tank-header">Shark Tank</h2>
         <div className="card-columns">
           {studentCards}
         </div>
