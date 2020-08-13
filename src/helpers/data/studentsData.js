@@ -125,7 +125,7 @@ const students = [{
   isAlive: true,
 }];
 
-const studentsSharkFood = [];
+let studentsSharkFood = [];
 
 // return array of students where student.isAlive === true
 const livingStudents = () => students.filter((student) => student.isAlive === true);
@@ -136,6 +136,13 @@ const dearlyBeloved = () => students.filter((student) => student.isAlive === fal
 // Find a student with given id and change student.isAlive === false
 const followTheLight = (studentId) => {
   students.find((student) => student.id === studentId).isAlive = false;
+};
+
+const reviveStudents = () => {
+  students.forEach((student) => {
+    students.find((stdnt) => stdnt.id === student.id).isAlive = true;
+  });
+  studentsSharkFood = [];
 };
 
 const sharkAttack = () => {
@@ -149,15 +156,15 @@ const sharkAttack = () => {
     followTheLight(sharkFoodStudent);
     studentsSharkFood.push(sharkFoodStudent);
   } else {
-    console.error('No more students to eat');
     sharkFoodStudent = 0;
   }
   return students.find((student) => student.id === sharkFoodStudent);
 };
 
 export default {
-  livingStudents,
   dearlyBeloved,
   followTheLight,
+  livingStudents,
+  reviveStudents,
   sharkAttack,
 };
