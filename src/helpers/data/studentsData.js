@@ -122,8 +122,10 @@ const students = [{
   id: 21,
   firstName: 'William',
   lastName: 'Campbell',
-  isAlive: false,
+  isAlive: true,
 }];
+
+const studentsSharkFood = [];
 
 // return array of students where student.isAlive === true
 const livingStudents = () => students.filter((student) => student.isAlive === true);
@@ -136,8 +138,26 @@ const followTheLight = (studentId) => {
   students.find((student) => student.id === studentId).isAlive = false;
 };
 
+const sharkAttack = () => {
+  let sharkFoodStudent = Math.floor(Math.random() * Math.floor(students.length)) + 1;
+
+  if (studentsSharkFood.length !== students.length) {
+    while (studentsSharkFood.indexOf(sharkFoodStudent) > -1 || sharkFoodStudent === 0) {
+      sharkFoodStudent = Math.floor(Math.random() * Math.floor(students.length)) + 1;
+    }
+
+    followTheLight(sharkFoodStudent);
+    studentsSharkFood.push(sharkFoodStudent);
+  } else {
+    console.error('No more students to eat');
+    sharkFoodStudent = 0;
+  }
+  return students.find((student) => student.id === sharkFoodStudent);
+};
+
 export default {
   livingStudents,
   dearlyBeloved,
   followTheLight,
+  sharkAttack,
 };
