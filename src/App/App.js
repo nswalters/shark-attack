@@ -7,8 +7,6 @@ import SharkTank from '../components/SharkTank/SharkTank';
 
 import studentsData from '../helpers/data/studentsData';
 
-// TODO: add Graveyard component
-
 class App extends React.Component {
   state = {
     livingStudents: [],
@@ -24,7 +22,7 @@ class App extends React.Component {
     this.setState({ dearlyBeloved });
   }
 
-  sharkAttack = () => {
+  sharkAttackEvent = () => {
     const recentlyDeparted = studentsData.sharkAttack();
 
     if (recentlyDeparted) {
@@ -38,18 +36,25 @@ class App extends React.Component {
     this.setState({ dearlyBeloved });
   }
 
+  reviveStudentsEvent = () => {
+    studentsData.reviveStudents();
+    const livingStudents = studentsData.livingStudents();
+    const dearlyBeloved = studentsData.dearlyBeloved();
+    const recentlyDeparted = {};
+    this.setState({ livingStudents, dearlyBeloved, recentlyDeparted });
+  }
+
   render() {
-    const { livingStudents } = this.state;
-    const { dearlyBeloved } = this.state;
-    const { recentlyDeparted } = this.state;
+    const { livingStudents, dearlyBeloved, recentlyDeparted } = this.state;
 
     return (
       <div className="App container">
         <h1>Shark Attack</h1>
         <SharkTank livingStudents={livingStudents} />
-        <button className="btn btn-danger my-3" onClick={this.sharkAttack}>SHARK ATTACK!!</button>
+        <button className="btn btn-danger my-3" onClick={this.sharkAttackEvent}>SHARK ATTACK!!</button>
         <RecentlyDeparted recentlyDeparted={recentlyDeparted} />
         <Graveyard dearlyBeloved={dearlyBeloved} />
+        <button className="btn btn-success my-3" onClick={this.reviveStudentsEvent}>REVIVE THEM!</button>
       </div>
     );
   }
