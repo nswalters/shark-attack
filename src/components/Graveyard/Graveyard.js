@@ -5,7 +5,6 @@ import Student from '../Student/Student';
 import './Graveyard.scss';
 
 class Graveyard extends React.Component {
-
   render() {
     const { dearlyBeloved } = this.props;
 

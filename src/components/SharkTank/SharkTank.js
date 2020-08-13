@@ -6,7 +6,6 @@ import Student from '../Student/Student';
 import './SharkTank.scss';
 
 class SharkTank extends React.Component {
-
   render() {
     const { livingStudents } = this.props;
 
