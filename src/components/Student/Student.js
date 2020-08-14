@@ -1,8 +1,14 @@
 import React from 'react';
 
+import studentShape from '../../helpers/propTypes/studentsShape';
+
 import './Student.scss';
 
 class Student extends React.Component {
+  static propTypes = {
+    student: studentShape.studentShape,
+  }
+
   render() {
     const { student } = this.props;
 

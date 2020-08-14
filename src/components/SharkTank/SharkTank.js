@@ -1,11 +1,16 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Student from '../Student/Student';
+import studentShape from '../../helpers/propTypes/studentsShape';
 
 import './SharkTank.scss';
 
 class SharkTank extends React.Component {
+  static propTypes = {
+    livingStudents: PropTypes.arrayOf(studentShape.studentShape),
+  }
+
   render() {
     const { livingStudents } = this.props;
 
